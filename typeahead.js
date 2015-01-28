@@ -3,7 +3,7 @@
 
 	angular.module('typeahead', [])
 
-	.directive('typeahead', ['$http', function ($http) {
+	.directive('typeahead', ['$http', '$document', function ($http, $document) {
 		return {
 			restrict: 'E',
 
@@ -18,6 +18,13 @@
 
 			compile: function() {
 				return function(scope, elem, attrs) {
+					// keep reference of click handler to unbind it
+					var clickHandler = function (evt) {
+						if(elem.find('input')[0] !== evt.target) {
+							selectOrReset(null);
+							scope.$apply();
+						}
+					};
 
 					var selectOrReset = function (item) {
 						if(item === null) {
@@ -52,6 +59,9 @@
 					};
 
 					scope.focus = function () {
+						// attach a click event handler to document
+						$document.bind('click', clickHandler);
+
 						scope.update();
 
 						// highlight the text
@@ -59,6 +69,9 @@
 					};
 
 					scope.handleSelection = function () {
+						// remove a previously-attached event handler from the document
+						$document.unbind('click', clickHandler);
+
 						var item = scope.items[scope.current];
 						selectOrReset(item);
 					};
