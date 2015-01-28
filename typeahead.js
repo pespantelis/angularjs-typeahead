@@ -78,6 +78,11 @@
 
 					scope.keyDown = function (evt) {
 						switch (evt.keyCode) {
+							case 13: // select current (enter key)
+								scope.handleSelection();
+								elem.find('input').blur();
+								break;
+
 							case 40: // activate next (down arrow key)
 								if(scope.current < scope.items.length-1) scope.current++;
 								break;
