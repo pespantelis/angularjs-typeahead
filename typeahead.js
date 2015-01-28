@@ -19,6 +19,20 @@
 			compile: function() {
 				return function(scope, elem, attrs) {
 
+					var selectOrReset = function (item) {
+						if(item === null) {
+							scope.model = null;
+						}
+						else {
+							scope.model = item[scope.titleKey];
+							item.query = item[scope.queryKey];
+						}
+
+						scope.params[scope.name] = item;
+						scope.hideList = true;
+						scope.items = null;
+					};
+
 					scope.update = function () {
 						// create the search query
 						var params = { params: { query: scope.model } };
@@ -46,18 +60,7 @@
 
 					scope.handleSelection = function () {
 						var item = scope.items[scope.current];
-
-						if(item === null) {
-							scope.model = null;
-						}
-						else {
-							scope.model = item[scope.titleKey];
-							item.query = item[scope.queryKey];
-						}
-
-						scope.params[scope.name] = item;
-						scope.hideList = true;
-						scope.items = null;
+						selectOrReset(item);
 					};
 
 					scope.isActive = function (index) {
