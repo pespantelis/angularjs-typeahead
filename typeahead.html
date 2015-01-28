@@ -5,7 +5,7 @@
 			{{ item[titleKey] }}
 		</span>
 		<span class="subtitle" ng-if="subtitleKey">
-			{{ item[subtitleKey] }}
+			{{ subtitlePrefix }} {{ item[subtitleKey] }} {{ subtitleSuffix }}
 		</span>
 	</li>
 </ul>

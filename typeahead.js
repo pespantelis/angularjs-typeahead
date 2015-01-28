@@ -14,6 +14,8 @@
 				queryKey: '@',
 				titleKey: '@',
 				subtitleKey: '@',
+				subtitlePrefix: '@',
+				subtitleSuffix: '@',
 			},
 
 			compile: function() {
