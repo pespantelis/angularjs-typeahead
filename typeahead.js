@@ -37,6 +37,13 @@
 						scope.hideList = false;
 					};
 
+					scope.focus = function () {
+						scope.update();
+
+						// highlight the text
+						elem.find('input').select();
+					};
+
 					scope.handleSelection = function () {
 						var item = scope.items[scope.current];
 

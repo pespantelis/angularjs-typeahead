@@ -1,4 +1,4 @@
-<input type="text" ng-model="model" name="{{name}}" placeholder="{{placeholder}}" ng-change="update()"/>
+<input type="text" ng-model="model" name="{{name}}" placeholder="{{placeholder}}" ng-change="update()" ng-focus="focus()"/>
 <ul ng-hide="hideList">
 	<li ng-repeat="item in items" ng-click="handleSelection()" ng-class="{active:isActive($index)}" ng-mousemove="setActive($index)">
 		<span class="title">
