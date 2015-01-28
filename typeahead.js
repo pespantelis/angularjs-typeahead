@@ -93,6 +93,11 @@
 								elem.find('input').blur();
 								break;
 
+							case 27: // reset (escape key)
+								selectOrReset(null);
+								elem.find('input').blur();
+								break;
+
 							case 40: // activate next (down arrow key)
 								if(scope.current < scope.items.length-1) scope.current++;
 								break;
