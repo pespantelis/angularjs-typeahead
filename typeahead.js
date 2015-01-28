@@ -44,9 +44,12 @@
 						scope.params[scope.name] = item;
 						scope.hideList = true;
 						scope.items = null;
+						scope.loading = false;
 					};
 
 					scope.update = function () {
+						scope.loading = true;
+
 						// create the search query
 						var params = { params: { query: scope.model } };
 						$.each(scope.params, function(key) {
@@ -58,6 +61,7 @@
 						$http.get(attrs.src, params).then(function (response) {
 							scope.items = response.data;
 							scope.current = 0;
+							scope.loading = false;
 						});
 
 						scope.params[scope.name] = null;

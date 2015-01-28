@@ -6,6 +6,7 @@ typeahead {
 	display: block;
 
 	input {
+		box-sizing: border-box;
 		width: 100%;
 	}
 
@@ -51,5 +52,12 @@ typeahead {
 	.active {
 		background-color: $primary-color;
 		color: #fff;
+	}
+
+	i {
+		position: absolute;
+		right: 13px;
+		top: 10px;
+		color: $primary-color;
 	}
 }
