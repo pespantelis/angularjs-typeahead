@@ -76,6 +76,18 @@
 						selectOrReset(item);
 					};
 
+					scope.keyDown = function (evt) {
+						switch (evt.keyCode) {
+							case 40: // activate next (down arrow key)
+								if(scope.current < scope.items.length-1) scope.current++;
+								break;
+
+							case 38: // activate previous (up arrow key)
+								if(scope.current > 0) scope.current--;
+								break;
+						}
+					};
+
 					scope.isActive = function (index) {
 						return scope.current == index;
 					};
