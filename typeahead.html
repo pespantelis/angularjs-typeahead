@@ -1,0 +1,11 @@
+<input type="text" ng-model="model" name="{{name}}" placeholder="{{placeholder}}" ng-change="update()"/>
+<ul ng-hide="hideList">
+	<li ng-repeat="item in items" ng-click="handleSelection()" ng-class="{active:isActive($index)}" ng-mousemove="setActive($index)">
+		<span class="title">
+			{{ item[titleKey] }}
+		</span>
+		<span class="subtitle" ng-if="subtitleKey">
+			{{ item[subtitleKey] }}
+		</span>
+	</li>
+</ul>
