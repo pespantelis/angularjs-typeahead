@@ -18,7 +18,11 @@
 				subtitleSuffix: '@',
 			},
 
-			compile: function() {
+			compile: function(elem, attrs) {
+				if ('required' in attrs) {
+					elem.find('input').attr('required', true);
+				}
+
 				return function(scope, elem, attrs) {
 					// keep reference of click handler to unbind it
 					var clickHandler = function (evt) {
