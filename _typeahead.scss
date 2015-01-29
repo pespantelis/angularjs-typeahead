@@ -2,62 +2,62 @@ $extra-width: 50%;
 $radius: 4px;
 
 typeahead {
-	position: relative;
-	display: block;
+  position: relative;
+  display: block;
 
-	input {
-		box-sizing: border-box;
-		width: 100%;
-	}
+  input {
+    box-sizing: border-box;
+    width: 100%;
+  }
 
-	ul {
-		position: absolute;
-		padding: 0;
-		width: 100% + $extra-width;
-		left: -($extra-width/2);
-		background-color: #fff;
-		list-style: none;
-		border-radius: $radius;
-		box-shadow: 0 0 10px rgba(#000, 0.25);
-		z-index: 1000;
-	}
+  ul {
+    position: absolute;
+    padding: 0;
+    width: 100% + $extra-width;
+    left: -($extra-width/2);
+    background-color: #fff;
+    list-style: none;
+    border-radius: $radius;
+    box-shadow: 0 0 10px rgba(#000, 0.25);
+    z-index: 1000;
+  }
 
-	li {
-		padding: 10px 16px;
-		border-bottom: 1px solid #ccc;
-		cursor: pointer;
+  li {
+    padding: 10px 16px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
 
-		&:first-child {
-			border-radius: $radius $radius 0 0;
-		}
+    &:first-child {
+      border-radius: $radius $radius 0 0;
+    }
 
-		&:last-child {
-			border-radius: 0 0 $radius $radius;
-		}
-	}
+    &:last-child {
+      border-radius: 0 0 $radius $radius;
+    }
+  }
 
-	span {
-		display: block;
-	}
+  span {
+    display: block;
+  }
 
-	.title {
-		font-size: 1em;
-	}
+  .title {
+    font-size: 1em;
+  }
 
-	.subtitle {
-		margin-top: 2px;
-		font-size: 0.75em;
-	}
+  .subtitle {
+    margin-top: 2px;
+    font-size: 0.75em;
+  }
 
-	.active {
-		background-color: $primary-color;
-		color: #fff;
-	}
+  .active {
+    background-color: $primary-color;
+    color: #fff;
+  }
 
-	i {
-		position: absolute;
-		right: 13px;
-		top: 10px;
-		color: $primary-color;
-	}
+  i {
+    position: absolute;
+    right: 13px;
+    top: 10px;
+    color: $primary-color;
+  }
 }
