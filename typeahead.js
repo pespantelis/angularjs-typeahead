@@ -15,7 +15,7 @@
         titleKey: '@',
         subtitleKey: '@',
         subtitlePrefix: '@',
-        subtitleSuffix: '@',
+        subtitleSuffix: '@'
       },
 
       compile: function(elem, attrs) {
@@ -118,7 +118,7 @@
         }
       },
 
-      templateUrl: '/components/typeahead/typeahead.html'
+      templateUrl: '/templates/typeahead.html'
     };
   }]);
 })();
