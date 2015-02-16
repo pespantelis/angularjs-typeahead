@@ -1,4 +1,4 @@
-<input type="text" ng-model="model" name="{{name}}" placeholder="{{placeholder}}" ng-change="update()" ng-focus="focus()" ng-keydown="keyDown($event)"/>
+<input type="text" ng-model="model" name="{{name}}" placeholder="{{placeholder}}" ng-change="update()" ng-focus="focus()" ng-keydown="keyDown($event)" autocomplete="off"/>
 <i class="fa fa-refresh" ng-show="loading"></i>
 <ul ng-hide="hideList">
 	<li ng-repeat="item in items" ng-click="handleSelection()" ng-class="{active:isActive($index)}" ng-mousemove="setActive($index)">
