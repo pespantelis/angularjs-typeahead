@@ -50,7 +50,7 @@ typeahead {
   }
 
   .active {
-    background-color: $primary-color;
+    background-color: $brand-primary;
     color: #fff;
   }
 
@@ -58,6 +58,6 @@ typeahead {
     position: absolute;
     right: 13px;
     top: 10px;
-    color: $primary-color;
+    color: $brand-primary;
   }
 }
